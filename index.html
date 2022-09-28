@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,41 +8,207 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="container">
-
-    </div>
-    
+    <div id="profiles"></div>
 </body>
 </html>
 <script>
+//     const profile = ["pragati", "shukla", "satna", "mp", true, "8319223363"];
+//   console.log("@PS Phone Number form Arr", profile[4]);
+
+//   const profileObj = {
+//     firstName: "peagati",
+//     lastName: "shukla",
+//     city: "satna",
+//     state: "MP",
+//     phoneNumber: "8319223363",
+//   };
+
+//   console.log("@PS PhoneNumber from Obj", profileObj.phoneNumber);
+
+  
+
+  const profileArr = [
+    {
+      firstName: "Burger",
+      profile: "6.jpg",
+      priceName: "100 for one",
+      rating: "4.5",
+      foodName: "Fast-Food",
+      quantity: 1,
+  
+      
+      
+      
+    },
+    {
+      firstName: "Coffee",
+      profile: "2.jpg",
+      priceName: "100 for one",
+      rating: "4.5",
+      foodName: "Fast-Food",
+      quantity: 1,
+      
+      
+      
+      
+    },
+    {
+      firstName: "Sandwich",
+      profile: "3.jpg",
+      priceName: "100 for one",
+      rating: "4.5",
+      foodName: "Fast-Food",
+      quantity: 1,
+      
+      
+      
+      
+    },
+    {
+      firstName: "vegetables",
+      profile: "4.jpg",
+      priceName: "100 for one",
+      rating: "4.5",
+      foodName: "Fast-Food",
+      quantity: 1,
+      
+
+      
+
+      
+      
+      
+    },
+    {
+      firstName: "Pizza",
+      profile: "5.jpg",
+      priceName: "100 for one",
+      rating: "4.5",
+      foodName: "Fast-Food",
+      quantity: 1,
+      
+      
+    },
+    {
+      firstName: "burger",
+      profile: "1.jpg",
+      priceName: "100 for one",
+      rating: "4.5",
+      foodName: "Fast-Food",
+      quantity: 1,
+      
+    }
+    
+
+]
+const profileContainer = document.getElementById("profiles");
+profileContainer.className = "profileContainer";
+profileContainer.style.display = "flex";
+profileContainer.style.flexWrap = "wrap";
+profileContainer.style.padding= "";
+profileContainer.style.marginLeft = "";
+profileContainer.style.gap = "20px";
+profileContainer.style.backgroundColor = "black";
+
+
+
+  for (let i = 0; i < profileArr.length; i++) {
+    const cardContainer = document.createElement("div");
+    cardContainer.className = "card";
+
+
+ 
+    const imgContainer = document.createElement("img");
+    imgContainer.src = profileArr[i].profile;
+    imgContainer.width = 300;
+    imgContainer.height = 200;
+    cardContainer.appendChild(imgContainer);
+
+
+    
+    const nameContainer = document.createElement("p");
+    nameContainer.textContent = profileArr[i].firstName;
+    cardContainer.appendChild(nameContainer);
+    cardContainer.style.textAlign = "center";
+    cardContainer.style.color = "white";
+    cardContainer.style.fontSize = "20px";
+    cardContainer.style.lineHeight = "5px";
     
 
 
 
+    const priceNameContainer = document.createElement("p");
+    priceNameContainer.textContent = profileArr[i].priceName;
+    cardContainer.appendChild(priceNameContainer);
 
-const number = 5;
+    const ratingContainer = document.createElement("p");
+    ratingContainer.textContent = profileArr[i].rating;
+    cardContainer.appendChild(ratingContainer);
 
+    const foodNameContainer = document.createElement("p");
+    foodNameContainer.textContent = profileArr[i].foodName;
+    cardContainer.appendChild(foodNameContainer);
+  
 
-if (number < 0) {
-    console.log('Error! Factorial for negative number does not exist.');
-}
+    
+    const incrementBtn = document.createElement("button");
+    incrementBtn.innerText = "+";
+  cardContainer.appendChild(incrementBtn);
+  incrementBtn.className = "increment";
+  incrementBtn.style.color ="white";
+  incrementBtn.style.backgroundColor = "blue";
+  incrementBtn.style.textAlign = "center"
+  
+  const counter = document.createElement("div"); 
+    counter.style.border = "1px solid white";
+  counter.style.height = "30px"
+var ias = 0;
+  incrementBtn.addEventListener("click", abc);
+  function abc(){
+    // counter.innerText = ias++;
+    profileArr[i].quantity = profileArr[i].quantity+1;
+    counter.innerText = profileArr[i].quantity;
+  
+    cardContainer.appendChild(counter);
 
+  }
 
-else if (number === 0) {
+    const decrementBtn = document.createElement("button");
+    decrementBtn.innerText = "-";
+    cardContainer.appendChild(decrementBtn);
+    decrementBtn.className = "decrement";
+    decrementBtn.style.color = "white";
+    decrementBtn.style.backgroundColor = "green";
+    decrementBtn.style.textAlign = "center";
 
-    console.log("factorial is ",  number)
-}
+    const countContainer = document.createElement("div");
+    
+    countContainer.style.border = "1px solid white";
+  countContainer.style.height = "30px"
 
+  var xyz = 0;
+  decrementBtn.addEventListener("click", prag);
+  function prag(){
+    // countContainer.innerText = ias--;
+    profileArr[i].quantity = profileArr[i].quantity-1;
+    counter.innerText = profileArr[i].quantity;
+  
+    cardContainer.appendChild(countContainer);
 
+  }
+  const removeBtn = document.createElement("button");
+    
+  removeBtn.innerText = "X";
+  cardContainer.appendChild(removeBtn);
+    removeBtn.style.color= "white";
+    removeBtn.style.backgroundColor= "black";
+    removeBtn.addEventListener("click", () => {
+      cardContainer.remove();
+      return;
+    });
 
-else {
-    let fact = 1;
-    for (i = 1; i <= number; i++) {
-        fact *= i;
-    }
-    console.log("factorail is", fact );
-}
-
-
+    profileContainer.appendChild(cardContainer);
+  }
+  
 
 </script>
