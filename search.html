@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="arrays">
+
+    </div>
+    
+</body>
+</html>
+<script>
+    const personArrays = document.getElementById("arrays");
+
+    const persons = [
+        {
+            name: 'pragati',
+            age: 22,
+            
+        },
+        
+        {
+            name: 'ankit',
+            age: 30,
+        
+
+        },
+        {
+            name: 'saurav',
+            age: 25,
+            
+
+        },
+        {
+            name: 'saurav',
+            age: 25,
+        
+
+        },
+    ]
+const postContainer = persons.find(findankit);
+function findankit(person){
+    return person.name ==='ankit';
+}
+console.log(postContainer)
+
+    const age = persons.find(findpragati).age;
+    function findpragati(person){
+        return person.name === 'pragati';
+    }
+
+    
+    console.log(age);
+
+</script>
